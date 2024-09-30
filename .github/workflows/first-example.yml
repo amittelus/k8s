@@ -20,7 +20,7 @@ jobs:
             - name: CHeck Terraform version
               run: terraform --version
 
-            - name: CHeck Kubectl version
-              run: kubectl version 
+            - name: CHeck Jenkins status 
+              run: sudo service jenkins status
             
 
