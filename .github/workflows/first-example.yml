@@ -6,10 +6,12 @@ jobs:
     first_job:
         runs-on: ubuntu-latest
         steps:
+            - name: Adding Checkout Actions
+              uses: actions/checkout@v4
             - name: Welcome to step1
               run: echo "My Fisrt Github Actions Job"
             - name: List files
               run: ls
             - name: Reading readme file
-              run: cat ../README.md
+              run: cat README.md
 
