@@ -1,0 +1,28 @@
+name: Install Jenkins
+
+on: push
+
+jobs: 
+    first_job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Adding Checkout Actions
+              uses: actions/checkout@v4
+
+            - name: Welcome to step1
+              run: echo "My Fisrt Github Actions Job"
+
+            - name: Install Jenkins
+              run: sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+            - name: Adding Package
+              run: echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+            - name: Updating repo
+              run: sudo apt-get update 
+            - name: Installing Jenkins
+              run: sudo apt-get install jenkins
+            - name: Starting Jenkins
+              run: sudo service jenkins start
+            - name: Check Jenkins status 
+              run: sudo service jenkins status
+            
+
