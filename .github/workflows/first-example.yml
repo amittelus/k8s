@@ -14,4 +14,7 @@ jobs:
               run: ls
             - name: Reading readme file
               run: cat README.md
+            - name: Show Ansible version
+              run: ansible --version
+            
 
