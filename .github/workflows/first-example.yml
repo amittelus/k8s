@@ -15,6 +15,9 @@ jobs:
             - name: Reading readme file
               run: cat README.md
             - name: Show Ansible version
-              run: ansible --version
+              run: ansible --version   #it ran because ansible was pre-installed in this runner image
+
+            - name: CHeck Terraform version
+              run: terraform --version
             
 
